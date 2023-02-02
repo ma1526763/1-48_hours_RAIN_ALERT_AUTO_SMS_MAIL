@@ -2,16 +2,23 @@ import requests
 import os
 from datetime import datetime, timedelta
 from twilio.rest import Client
+from smtplib import SMTP
 
-
+# for get requests from open weather map
 LAT = os.environ["MY_LAT"]
 LON = os.environ["MY_LON"]
 API_KEY = os.environ['API_KEY']
 OPEN_WEATHER_API_END_POINT = "https://api.openweathermap.org/data/2.5/onecall"
+# for sending SMS
 TWILLIO_ACCOUNT_SID = os.environ["TWILLIO_SID"]
 TWILLIO_AUTH_TOKEN = os.environ["TWILLIO_AUTH_TOKEN"]
 TWILLIO_PHONE_NUMBER = os.environ["TWILLIO_PHONE_NUMBER"]
 MY_PHONE_NUMBER = os.environ["MY_PHONE_NUMBER"]
+# for sending mail
+SENDER_MAIL = os.environ.get('SENDER_MAIL')
+PASSWORD = os.environ.get('PASSWORD')
+RECEIVER_MAIl = os.environ['RECEIVER_MAIL']
+
 parameters = {
     "appid": API_KEY,
     "lat": LAT,
@@ -137,6 +144,14 @@ def send_message(message_to_send):
                            from_=TWILLIO_PHONE_NUMBER,
                            to=MY_PHONE_NUMBER
                            )
+    print("message sent successfully")
+
+def send_mail(message_to_send):
+    with SMTP("smtp.gmail.com") as connection:
+        connection.starttls()
+        connection.login(user=SENDER_MAIL, password=PASSWORD)
+        connection.sendmail(from_addr=SENDER_MAIL, to_addrs=RECEIVER_MAIl, msg=f"Subject:WEATHER INFORMATION\n\n{message_to_send}")
+        print("mail sent successfully")
 
 # You can check 0, 48 hours rain data. It's your wish either 5, 12, 24,
 # Add second True parameter if you want to check all weather conditions including clear sky
@@ -144,10 +159,18 @@ def send_message(message_to_send):
 weather_data = check_rain(48, True)
 
 if rain_will_be_there:
-    message = get_message()
-    send_message(message)
+    message_to = get_message()
+    # send SMS
+    send_message(message_to)
+    # send MAIL
+    send_mail(message_to)
+
 
 # uncomment if you want to see message or send msg either rain or not
-# message = get_message()
+# message_ = get_message()
 # print(message)
-# send_message(message)
+# send SMS
+# send_message(message_)
+# send MAIL
+# print(message_)
+# send_mail(message_)
