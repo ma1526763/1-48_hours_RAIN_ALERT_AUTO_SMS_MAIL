@@ -161,16 +161,16 @@ weather_data = check_rain(48, True)
 if rain_will_be_there:
     message_to = get_message()
     # send SMS
-    send_message(message_to)
+    # send_message(message_to)
     # send MAIL
     send_mail(message_to)
-
-
-# uncomment if you want to see message or send msg either rain or not
-# message_ = get_message()
-# print(message)
-# send SMS
-# send_message(message_)
-# send MAIL
-# print(message_)
-# send_mail(message_)
+else:
+    print("No rain")
+    # uncomment if you want to see message or send msg either rain or not
+    message_ = get_message()
+    print(message_)
+    # send SMS
+    # send_message(message_)
+    # send MAIL
+    # print(message_)
+    # send_mail(message_)
