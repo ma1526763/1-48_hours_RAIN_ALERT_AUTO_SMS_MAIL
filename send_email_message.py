@@ -8,7 +8,7 @@ TWILLIO_ACCOUNT_SID = os.environ["TWILLIO_SID"]
 TWILLIO_AUTH_TOKEN = os.environ["TWILLIO_AUTH_TOKEN"]
 TWILLIO_PHONE_NUMBER = os.environ["TWILLIO_PHONE_NUMBER"]
 MY_PHONE_NUMBER = os.environ["MY_PHONE_NUMBER"]
-# for sending mail
+# for sendi ng mail
 SENDER_MAIL = os.environ.get('SENDER_MAIL')
 PASSWORD = os.environ.get('PASSWORD')
 RECEIVER_MAIl = os.environ['RECEIVER_MAIL']

@@ -14,11 +14,10 @@ parameters = {
     "appid": API_KEY,
     "lat": LAT,
     "lon": LON,
-    "exclude": "current,minutely,daily,alerts"
+    "exclude": "current,daily,alerts"
 }
 # GET API DATA
 data = requests.get(OPEN_WEATHER_API_END_POINT, params=parameters).json()['hourly']
-
 # this function will check weather conditions for 1 to next 48 hours
 def check_rain(hour=12, all_weather_info=False):
     global rain_will_be_there

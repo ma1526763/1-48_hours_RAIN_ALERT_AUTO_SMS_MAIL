@@ -1,4 +1,5 @@
-from weather_information import rain_will_be_there, check_rain
+import weather_information
+from weather_information import check_rain
 from create_message import get_message
 from send_email_message import send_message, send_mail
 
@@ -8,9 +9,13 @@ from send_email_message import send_message, send_mail
 weather_data = check_rain(48, True)
 message = get_message(weather_data)
 
-if rain_will_be_there:
+if not message:
+    message = "No Rain Alert"
+
+if weather_information.rain_will_be_there:
+    print("Rain Alert")
     # send SMS
-    send_message(message)
+    # send_message(message)
     # send MAIL
     send_mail(message)
 else:
@@ -18,7 +23,7 @@ else:
 #     # uncomment if you want to see message or send msg either rain or not
 #     # print(message)
 #     # send_message(message)
-#     # send_mail(message)
+    send_mail(message)
 
 
 

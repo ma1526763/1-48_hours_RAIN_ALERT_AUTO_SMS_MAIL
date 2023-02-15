@@ -1,4 +1,3 @@
-
 # this function will make the decision either hour is Am, PM and more
 def make_am_pm(hour, end_=False):
     if hour < 12:
@@ -13,7 +12,6 @@ def make_am_pm(hour, end_=False):
             hour = 12
         if end_:
             hour = f"{str(hour)}:59"
-
         hour = str(hour) + "PM"
     return hour
 
