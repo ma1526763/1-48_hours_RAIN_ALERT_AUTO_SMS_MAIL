@@ -1,0 +1,15 @@
+On Friday (24-Feb-2023)
+Clear (clear sky): at (1PM-5:59PM).
+Clouds (few clouds): at 6PM.
+Clouds (overcast clouds): at (7PM-11:59PM).
+
+On Saturday (25-Feb-2023)
+Clouds (overcast clouds): at 12AM.
+Clouds (scattered clouds): at (1AM-6:59AM).
+Clear (clear sky): at 7AM, (12PM-7:59PM), (9PM-11:59PM).
+Rain (light rain): at (8AM-11:59AM), 8PM.
+
+On Sunday (26-Feb-2023)
+Clear (clear sky): at (12AM-4:59AM).
+Rain (light rain): at (5AM-8:59AM), (10AM-12:59PM).
+Rain (moderate rain): at 9AM.

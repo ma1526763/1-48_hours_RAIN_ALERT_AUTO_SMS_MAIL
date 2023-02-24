@@ -1,0 +1,10 @@
+On Friday (24-Feb-2023)
+Clouds (overcast clouds): at (1PM-6:59PM).
+Clouds (broken clouds): at (7PM-11:59PM).
+
+On Saturday (25-Feb-2023)
+Clouds (broken clouds): at (12AM-1:59AM), (9AM-12:59PM).
+Clouds (overcast clouds): at (2AM-8:59AM), (1PM-11:59PM).
+
+On Sunday (26-Feb-2023)
+Clouds (overcast clouds): at (12AM-12:59PM).
